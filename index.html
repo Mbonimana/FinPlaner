@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Budget & Expense Tracker</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <h1>FinPlaner</h1>
+  <h3>Your Personal Budget & Expense Tracker</h3>
+
+  <div class="container">
+
+    <!-- Budget Section -->
+    <div class="section">
+      <label for="budget">Set Monthly Budget:</label>
+      <input type="number" id="budget" placeholder="Enter budget amount">
+      <button onclick="setBudget()">Save Budget</button>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary">
+      <div>Total Budget:<span id="total-budget">0</span> Rwf</div>
+      <div>Total Spent: <span id="total-expenses">0</span> Rwf</div>
+      <div>Remaining: <span id="remaining">0</span> Rwf</div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+
+    <!-- Add Expense Section -->
+    <div class="section">
+      <h3>Add Expense</h3>
+      <label for="desc">Description</label>
+      <input type="text" id="desc" placeholder="e.g. Groceries">
+
+      <label for="category">Category</label>
+      <select id="category">
+        <option>Food</option>
+        <option>Transport</option>
+        <option>Entertainment</option>
+        <option>Shopping</option>
+        <option>Other</option>
+      </select>
+
+      <label for="amount">Amount</label>
+      <input type="number" id="amount" placeholder="Enter amount">
+
+      <label for="date">Date</label>
+      <input type="date" id="date">
+
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <!-- Expense List -->
+    <div class="section">
+      <h3>Expenses</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="expense-list"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
